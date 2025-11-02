@@ -4,10 +4,10 @@ import pandas as pd
 import datetime
 
 DB_CONFIG = {
-    'host': 'localhost',
-    'user': 'root',
-    'password': 'Hansu@2006',  # replace if needed
-    'database': 'dbep'
+    'host': os.getenv('DB_HOST'),
+    'user': os.getenv('DB_USER'),
+    'password': os.getenv('DB_PASSWORD'),
+    'database': os.getenv('DB_NAME')
 }
 
 booking_cache = {}
@@ -381,4 +381,5 @@ def update_user_seat_pref(email, pref):
     finally:
         cur.close()
         conn.close()
+
 
