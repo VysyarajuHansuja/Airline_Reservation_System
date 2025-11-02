@@ -2,7 +2,7 @@ import mysql.connector
 from collections import deque
 import pandas as pd
 import datetime
-
+import os
 DB_CONFIG = {
     'host': os.getenv('DB_HOST'),
     'user': os.getenv('DB_USER'),
@@ -381,5 +381,6 @@ def update_user_seat_pref(email, pref):
     finally:
         cur.close()
         conn.close()
+
 
 
